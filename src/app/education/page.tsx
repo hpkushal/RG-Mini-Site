@@ -1,271 +1,566 @@
+'use client';
+
 import React from 'react';
-import ClientLayout from '../../components/ClientLayout';
 import Link from 'next/link';
+import FloatingHelpButton from '@/components/ui/FloatingHelpButton';
 
 export default function EducationPage() {
   return (
-    <ClientLayout>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Education Header */}
+    <div className="education-page">
+      {/* Education Header */}
+      <div className="text-center mb-12" id="overview">
+        <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+          Responsible Gambling Education
+        </h1>
+        <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+          Learn about gambling mechanics, cognitive biases, and strategies for maintaining healthy gambling habits.
+        </p>
+      </div>
+
+      {/* Analytics & Insights Section */}
+      <section id="analytics-insights" className="mb-16">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Responsible Gambling Education
-          </h1>
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Analytics & Insights
+          </h2>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            Learn about gambling mechanics, cognitive biases, and strategies for maintaining healthy gambling habits.
+            Understanding your gambling data can transform how you play and help you develop healthier habits.
           </p>
         </div>
 
-        {/* Featured Article */}
-        <div className="mb-16 bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-lg overflow-hidden shadow-lg">
-          <div className="md:flex">
-            <div className="md:flex-shrink-0 flex items-center justify-center bg-indigo-600 md:w-48 p-8">
-              <svg className="h-20 w-20 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-              </svg>
-            </div>
-            <div className="p-8">
-              <h2 className="text-2xl font-bold text-indigo-900">Understanding Your Risk Profile</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Learn how the Risk-Reward Simulator helps identify your gambling tendencies and what your risk score means for your habits.
-              </p>
-              <div className="mt-6">
-                <Link href="/simulator" className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                  Try the Simulator
-                </Link>
+        {/* Introduction Card */}
+        <div className="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-lg overflow-hidden shadow-lg mb-12">
+          <div className="p-8">
+            <h2 className="text-2xl font-bold text-indigo-900 mb-4">How Analytics Can Transform Your Gambling</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Our simulator doesn't just let you practice—it provides powerful insights into your gambling behavior, helping you:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Identify Patterns</h3>
+                <p className="text-gray-600">
+                  Recognize behavioral trends you might not notice during actual gambling sessions
+                </p>
+              </div>
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Improve Decision-Making</h3>
+                <p className="text-gray-600">
+                  Make data-driven decisions that lead to better risk management and outcomes
+                </p>
+              </div>
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Develop Awareness</h3>
+                <p className="text-gray-600">
+                  Build self-awareness about your triggers, biases, and gambling tendencies
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Educational Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Behavioral Analysis Section */}
+        <div className="mb-12">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8">Behavioral Analysis</h3>
+          <p className="text-lg text-gray-600 mb-8">
+            Understanding how you bet is the first step toward responsible gambling. Our behavioral metrics reveal your unconscious patterns:
+          </p>
           
-          {/* Cognitive Biases */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-red-100 text-red-600 mb-4">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Common Gambling Fallacies</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-semibold text-gray-900 mb-4">Betting Frequency</h4>
               <p className="text-gray-600 mb-4">
-                Discover the cognitive biases that can lead to problematic gambling behavior and how to recognize them in yourself.
+                This metric reveals how quickly you place bets, which can indicate impulsivity or thoughtful decision-making.
               </p>
-              <div className="space-y-3">
-                <div className="border-l-4 border-red-500 pl-4 py-2">
-                  <h4 className="font-semibold text-gray-900">The Gambler's Fallacy</h4>
-                  <p className="text-sm text-gray-600">Believing that past events affect the probability of future outcomes in random events.</p>
-                </div>
-                <div className="border-l-4 border-red-500 pl-4 py-2">
-                  <h4 className="font-semibold text-gray-900">The Hot Hand Fallacy</h4>
-                  <p className="text-sm text-gray-600">Believing that a person who has experienced success has a greater chance of further success.</p>
-                </div>
-                <div className="border-l-4 border-red-500 pl-4 py-2">
-                  <h4 className="font-semibold text-gray-900">Illusion of Control</h4>
-                  <p className="text-sm text-gray-600">Overestimating one's ability to control events that are actually determined by chance.</p>
-                </div>
+              <div className="bg-gray-50 p-4 rounded-md mb-4">
+                <span className="text-sm text-gray-500">Example insight:</span>
+                <p className="text-md font-medium text-gray-800 mt-1">Average time between bets: 2 seconds</p>
+                <p className="text-yellow-600 mt-2">You place bets rapidly. Consider taking more time between decisions.</p>
               </div>
             </div>
-          </div>
-          
-          {/* Probability and Odds */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-100 text-blue-600 mb-4">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Understanding Probability</h3>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h4 className="text-xl font-semibold text-gray-900 mb-4">Risk Appetite</h4>
               <p className="text-gray-600 mb-4">
-                Learn how odds work in different gambling scenarios and why the house always has an edge in the long run.
+                Your willingness to take risks can determine your long-term gambling success and financial health.
               </p>
-              <table className="min-w-full divide-y divide-gray-200 mb-4">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Game</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Player Odds</th>
-                    <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">House Edge</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white divide-y divide-gray-200">
-                  <tr>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Blackjack</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">49.5%</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">0.5-2%</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Roulette (American)</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">47.4%</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">5.26%</td>
-                  </tr>
-                  <tr>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Slots</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">Varies</td>
-                    <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">2-15%</td>
-                  </tr>
-                </tbody>
-              </table>
-              <p className="text-sm text-gray-500">
-                The Risk-Reward Simulator helps you experience these probabilities in a risk-free environment.
-              </p>
-            </div>
-          </div>
-          
-          {/* Responsible Gambling Strategies */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <div className="flex items-center justify-center h-12 w-12 rounded-md bg-green-100 text-green-600 mb-4">
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
+              <div className="bg-gray-50 p-4 rounded-md mb-4">
+                <span className="text-sm text-gray-500">Example insight:</span>
+                <p className="text-md font-medium text-gray-800 mt-1">Average risk level: 40.1%</p>
+                <p className="text-md font-medium text-gray-800">Consistency: Variable</p>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Healthy Gambling Habits</h3>
-              <p className="text-gray-600 mb-4">
-                Practical strategies to maintain control and ensure gambling remains an enjoyable activity rather than a problem.
-              </p>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-500 mr-2 text-sm font-semibold">1</span>
-                  <span className="text-gray-600">Set strict time and money limits before playing</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-500 mr-2 text-sm font-semibold">2</span>
-                  <span className="text-gray-600">Never chase losses by betting more than planned</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-500 mr-2 text-sm font-semibold">3</span>
-                  <span className="text-gray-600">View gambling as entertainment, not income</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-500 mr-2 text-sm font-semibold">4</span>
-                  <span className="text-gray-600">Take regular breaks to maintain perspective</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-green-100 text-green-500 mr-2 text-sm font-semibold">5</span>
-                  <span className="text-gray-600">Never gamble under the influence of alcohol or drugs</span>
-                </li>
-              </ul>
-              <p className="text-sm text-gray-500">
-                The simulator helps you practice these strategies in a safe environment.
-              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Risk Profile Explanation */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-16">
-          <div className="px-6 py-4 bg-gradient-to-r from-gray-800 to-gray-900">
-            <h2 className="text-2xl font-bold text-white">Understanding Risk Profiles</h2>
-          </div>
+      {/* Cognitive Biases Section */}
+      <section id="cognitive-biases" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Cognitive Biases
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Discover the cognitive biases that can lead to problematic gambling behavior.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
           <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Common Gambling Fallacies</h3>
             <p className="text-gray-600 mb-6">
-              Our Risk-Reward Simulator calculates your risk profile based on your betting behavior. 
-              Understanding your personal risk profile is key to developing responsible gambling habits.
+              Cognitive biases can distort our perception of gambling outcomes and lead to poor decisions. Recognizing these biases is the first step to overcoming them:
+            </p>
+            <div className="space-y-6">
+              <div className="border-l-4 border-red-500 pl-4 py-3">
+                <h4 className="text-lg font-medium text-gray-900">The Gambler's Fallacy</h4>
+                <p className="text-gray-600 mt-1">Believing that past events affect the probability of future outcomes in random events.</p>
+                <p className="text-gray-600 mt-2">
+                  <span className="font-medium">Example:</span> Thinking that after 10 reds in roulette, black is "due" to come up next.
+                </p>
+              </div>
+              
+              <div className="border-l-4 border-red-500 pl-4 py-3">
+                <h4 className="text-lg font-medium text-gray-900">The Hot Hand Fallacy</h4>
+                <p className="text-gray-600 mt-1">Believing that a person who has experienced success has a greater chance of further success.</p>
+                <p className="text-gray-600 mt-2">
+                  <span className="font-medium">Example:</span> Increasing bet sizes after winning several hands in a row, believing you're "on a streak."
+                </p>
+              </div>
+              
+              <div className="border-l-4 border-red-500 pl-4 py-3">
+                <h4 className="text-lg font-medium text-gray-900">Illusion of Control</h4>
+                <p className="text-gray-600 mt-1">Overestimating one's ability to control events that are actually determined by chance.</p>
+                <p className="text-gray-600 mt-2">
+                  <span className="font-medium">Example:</span> Believing certain rituals or behaviors will influence random outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Probability & Odds Section */}
+      <section id="probability-odds" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Probability & Odds
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Learn how odds work in different gambling scenarios and why the house always has an edge.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Understanding the House Edge</h3>
+            <p className="text-gray-600 mb-6">
+              Every casino game is designed with a mathematical advantage for the house. This ensures that over time, the casino will always profit.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="border rounded-lg overflow-hidden">
-                <div className="bg-green-500 py-2 px-4">
-                  <h3 className="text-white font-semibold">Low Risk (0-33)</h3>
+            <table className="min-w-full divide-y divide-gray-200 mb-4">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Game</th>
+                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">Player Odds</th>
+                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">House Edge</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Blackjack</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">49.5%</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">0.5-2%</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Roulette (American)</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">47.4%</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">5.26%</td>
+                </tr>
+                <tr>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-900">Slots</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">Varies</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-sm text-gray-500">2-15%</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p className="text-gray-600 mt-4">
+              Understanding these odds is crucial for responsible gambling. Remember: the longer you play, the more likely the house edge will affect your results.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Healthy Habits Section */}
+      <section id="healthy-habits" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Healthy Habits
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Practical strategies to maintain control and ensure gambling remains an enjoyable activity.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Building Sustainable Gambling Habits</h3>
+            <p className="text-gray-600 mb-6">
+              These strategies can help you maintain a healthy relationship with gambling:
+            </p>
+            
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-700 mr-3">1</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Set strict limits</h4>
+                  <p className="text-gray-600">Decide on time and money limits before you start and stick to them. Never exceed these limits.</p>
                 </div>
-                <div className="p-4">
-                  <h4 className="font-medium text-gray-900 mb-2">Common Traits:</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Small, consistent bet sizes</li>
-                    <li>• Strict adherence to limits</li>
-                    <li>• Regular breaks during play</li>
-                    <li>• Focuses on entertainment value</li>
-                  </ul>
-                  <h4 className="font-medium text-gray-900 mt-4 mb-2">Personas:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Cautious Chris</span>
-                    <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Measured Mark</span>
-                  </div>
+              </li>
+              
+              <li className="flex items-start">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-700 mr-3">2</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Never chase losses</h4>
+                  <p className="text-gray-600">Accepting losses is part of gambling. Trying to win back lost money often leads to bigger losses.</p>
                 </div>
+              </li>
+              
+              <li className="flex items-start">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-700 mr-3">3</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Take regular breaks</h4>
+                  <p className="text-gray-600">Stepping away from gambling regularly helps maintain perspective and avoid impulsive decisions.</p>
+                </div>
+              </li>
+              
+              <li className="flex items-start">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-700 mr-3">4</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">View gambling as entertainment</h4>
+                  <p className="text-gray-600">Think of gambling expenses as the cost of entertainment, not as a way to make money.</p>
+                </div>
+              </li>
+              
+              <li className="flex items-start">
+                <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-700 mr-3">5</span>
+                <div>
+                  <h4 className="font-semibold text-gray-900">Keep gambling balanced</h4>
+                  <p className="text-gray-600">Ensure gambling is just one of many activities you enjoy, not a central focus of your life.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Warning Signs Section */}
+      <section id="warning-signs" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Warning Signs
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Recognize potential red flags that may indicate problematic gambling behavior.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">When Gambling Becomes a Problem</h3>
+            <p className="text-gray-600 mb-6">
+              Gambling becomes problematic when it starts to negatively impact different areas of your life. Here are some warning signs to watch for:
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-red-50 p-5 rounded-lg">
+                <h4 className="text-lg font-semibold text-red-800 mb-2">Financial Warning Signs</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Borrowing money to gamble</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Difficulty paying bills due to gambling</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Depleting savings for gambling</span>
+                  </li>
+                </ul>
               </div>
               
-              <div className="border rounded-lg overflow-hidden">
-                <div className="bg-yellow-500 py-2 px-4">
-                  <h3 className="text-white font-semibold">Medium Risk (34-66)</h3>
-                </div>
-                <div className="p-4">
-                  <h4 className="font-medium text-gray-900 mb-2">Common Traits:</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Variable bet sizing</li>
-                    <li>• Occasional limit stretching</li>
-                    <li>• Some chasing of losses</li>
-                    <li>• Emotional responses to wins/losses</li>
-                  </ul>
-                  <h4 className="font-medium text-gray-900 mt-4 mb-2">Personas:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Varying Victor</span>
-                    <span className="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Emotional Ella</span>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border rounded-lg overflow-hidden">
-                <div className="bg-red-500 py-2 px-4">
-                  <h3 className="text-white font-semibold">High Risk (67-100)</h3>
-                </div>
-                <div className="p-4">
-                  <h4 className="font-medium text-gray-900 mb-2">Common Traits:</h4>
-                  <ul className="text-sm text-gray-600 space-y-1">
-                    <li>• Large, inconsistent betting</li>
-                    <li>• Frequently exceeding limits</li>
-                    <li>• Strong tendency to chase losses</li>
-                    <li>• Gambling for financial recovery</li>
-                  </ul>
-                  <h4 className="font-medium text-gray-900 mt-4 mb-2">Personas:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Risky Rick</span>
-                    <span className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Chasing Charlie</span>
-                  </div>
-                </div>
+              <div className="bg-red-50 p-5 rounded-lg">
+                <h4 className="text-lg font-semibold text-red-800 mb-2">Behavioral Warning Signs</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Lying about gambling habits</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Neglecting work or family obligations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-red-600 mr-2 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">Feeling restless or irritable when not gambling</span>
+                  </li>
+                </ul>
               </div>
             </div>
             
-            <div className="mt-8 text-center">
-              <Link href="/simulator" className="inline-flex items-center px-5 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
-                Discover Your Risk Profile
-              </Link>
+            <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
+              <h4 className="text-lg font-semibold text-blue-800 mb-2">Getting Help</h4>
+              <p className="text-gray-700 mb-3">
+                If you recognize these warning signs in yourself or someone else, it's important to seek help. Resources include:
+              </p>
+              <ul className="space-y-1 text-gray-700">
+                <li className="flex items-center">
+                  <svg className="h-5 w-5 text-blue-600 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  National Problem Gambling Helpline: 1-800-522-4700
+                </li>
+                <li className="flex items-center">
+                  <svg className="h-5 w-5 text-blue-600 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Gamblers Anonymous: <a href="https://www.gamblersanonymous.org" className="text-blue-600 hover:underline">www.gamblersanonymous.org</a>
+                </li>
+                <li className="flex items-center">
+                  <svg className="h-5 w-5 text-blue-600 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  Local mental health professionals
+                </li>
+              </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Research & Studies Section */}
+      <section id="research-studies" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Research & Studies
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Scientific research on gambling behavior, addiction, and treatment approaches.
+          </p>
         </div>
 
-        {/* Further Resources */}
-        <div className="bg-indigo-50 rounded-lg p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Further Resources</h2>
-          <p className="text-gray-600 mb-6">
-            If you or someone you know is struggling with problem gambling, these resources can help:
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-4 rounded-md shadow-sm">
-              <h3 className="font-semibold text-indigo-700 mb-2">National Problem Gambling Helpline</h3>
-              <p className="text-gray-600 mb-2">24/7 confidential support for those affected by problem gambling.</p>
-              <p className="text-indigo-600 font-medium">1-800-522-4700</p>
-            </div>
-            <div className="bg-white p-4 rounded-md shadow-sm">
-              <h3 className="font-semibold text-indigo-700 mb-2">Gamblers Anonymous</h3>
-              <p className="text-gray-600 mb-2">A fellowship of people who share their experience to help each other.</p>
-              <a href="https://www.gamblersanonymous.org" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium">www.gamblersanonymous.org</a>
-            </div>
-            <div className="bg-white p-4 rounded-md shadow-sm">
-              <h3 className="font-semibold text-indigo-700 mb-2">National Council on Problem Gambling</h3>
-              <p className="text-gray-600 mb-2">Advocating for programs and services to assist problem gamblers.</p>
-              <a href="https://www.ncpgambling.org" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium">www.ncpgambling.org</a>
-            </div>
-            <div className="bg-white p-4 rounded-md shadow-sm">
-              <h3 className="font-semibold text-indigo-700 mb-2">BeGambleAware</h3>
-              <p className="text-gray-600 mb-2">Free, confidential help and support with gambling problems.</p>
-              <a href="https://www.begambleaware.org" target="_blank" rel="noopener noreferrer" className="text-indigo-600 font-medium">www.begambleaware.org</a>
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Key Research Findings</h3>
+            <p className="text-gray-600 mb-6">
+              Recent studies have provided valuable insights into gambling behavior and effective interventions:
+            </p>
+            
+            <div className="space-y-6">
+              <div className="border border-gray-200 rounded-lg p-5">
+                <div className="flex items-start">
+                  <div className="bg-purple-100 p-3 rounded-lg mr-4">
+                    <svg className="h-6 w-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Understanding Near Misses</h4>
+                    <p className="text-sm text-gray-500 mb-2">Journal of Gambling Studies, 2021</p>
+                    <p className="text-gray-600">
+                      Research shows that "near miss" outcomes in gambling (e.g., getting 2 out of 3 matching symbols) trigger a similar brain response to actual wins, encouraging continued play despite being losses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-5">
+                <div className="flex items-start">
+                  <div className="bg-purple-100 p-3 rounded-lg mr-4">
+                    <svg className="h-6 w-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Effectiveness of Self-Exclusion Programs</h4>
+                    <p className="text-sm text-gray-500 mb-2">International Gambling Studies, 2022</p>
+                    <p className="text-gray-600">
+                      A comprehensive review found that self-exclusion programs can be effective interventions, with 80% of participants reporting decreased gambling urges and improved quality of life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg p-5">
+                <div className="flex items-start">
+                  <div className="bg-purple-100 p-3 rounded-lg mr-4">
+                    <svg className="h-6 w-6 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-gray-900">Cognitive-Behavioral Therapy for Gambling Disorder</h4>
+                    <p className="text-sm text-gray-500 mb-2">Journal of Clinical Psychology, 2020</p>
+                    <p className="text-gray-600">
+                      Studies indicate that Cognitive-Behavioral Therapy (CBT) remains one of the most effective treatments for gambling disorder, helping to identify and change unhealthy gambling behaviors and thoughts.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </ClientLayout>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Frequently Asked Questions
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Answers to common questions about responsible gambling and our tools.
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+          <div className="p-6">
+            <div className="space-y-6">
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">How accurate is the gambling simulator?</h3>
+                <p className="text-gray-600">
+                  Our simulator is designed to accurately reflect real gambling mechanics and odds. It uses verified random number generation and implements the same house edge found in actual gambling venues. While no simulation can perfectly replicate real-world conditions, our tool provides a realistic approximation of gambling experiences.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Can I use the analytics tools if I gamble on other websites?</h3>
+                <p className="text-gray-600">
+                  Currently, our analytics tools only track activity within our simulator. However, we're developing features to allow manual entry of gambling data from other sources. In the meantime, you can still learn valuable lessons from the simulator that apply to your gambling elsewhere.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">How do I know if my gambling is becoming problematic?</h3>
+                <p className="text-gray-600">
+                  Signs of problematic gambling include spending more time or money than planned, gambling to escape problems, lying about gambling habits, or experiencing negative consequences in your personal or financial life. Our self-assessment tool can help you evaluate your gambling behavior. If you're concerned, we encourage you to seek professional advice from a counselor specializing in gambling disorders.
+                </p>
+              </div>
+              
+              <div className="border-b border-gray-200 pb-6">
+                <h3 className="text-lg font-medium text-gray-900 mb-2">What makes gambling addictive?</h3>
+                <p className="text-gray-600">
+                  Gambling can trigger the brain's reward system, releasing dopamine similar to other addictive activities. The variable reward schedule (unpredictable wins) is particularly effective at reinforcing behavior. Additionally, factors like near-misses, the illusion of control, and the possibility of recovering losses can make gambling particularly compelling for some individuals.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Are some forms of gambling more addictive than others?</h3>
+                <p className="text-gray-600">
+                  Research suggests that games with faster play speeds, frequent near-misses, and higher levels of player involvement (like making decisions that affect outcomes) tend to have higher addiction potential. Slot machines and electronic gaming machines are often cited as having particularly high addiction rates, while games like lottery have lower rates but still carry risks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resource Library Section */}
+      <section id="resource-library" className="mb-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
+            Resource Library
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Additional materials to support your responsible gambling journey.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Recommended Books</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li><span className="font-medium">Addiction by Design</span> - Natasha Dow Schüll</li>
+                <li><span className="font-medium">The Easy Way to Stop Gambling</span> - Allen Carr</li>
+                <li><span className="font-medium">Gambling: Don't Bet on It</span> - Paul Petry</li>
+              </ul>
+              <a href="#" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">See full reading list →</a>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Video Resources</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>Understanding the Psychology of Gambling</li>
+                <li>How to Set Effective Gambling Limits</li>
+                <li>Testimonials: Recovery Stories</li>
+              </ul>
+              <a href="#" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">View video library →</a>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="p-6">
+              <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Downloadable Resources</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>Weekly Gambling Budget Tracker</li>
+                <li>Cognitive Distortions Worksheet</li>
+                <li>Self-Exclusion Guide & Form</li>
+              </ul>
+              <a href="#" className="text-blue-600 hover:text-blue-800 mt-4 inline-block">Download resources →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Floating Help Button */}
+      <FloatingHelpButton href="/support" />
+    </div>
   );
-} 
+}

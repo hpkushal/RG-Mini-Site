@@ -6,12 +6,9 @@ import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navigation = [
-  { name: 'Home', href: '/' },
   { name: 'Risk Simulator', href: '/simulator' },
-  { name: 'Dashboard', href: '/dashboard' },
   { name: 'Education', href: '/education' },
   { name: 'Support', href: '/support' },
-  { name: 'Community', href: '/community' },
 ];
 
 export default function Header() {
@@ -46,9 +43,16 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link href="/login" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:space-x-6">
+          <Link href="/login" className="text-sm font-semibold leading-6 text-gray-900 hover:text-indigo-600">
+            Log in
+          </Link>
+          <span className="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+          <Link 
+            href="/signup" 
+            className="rounded-md bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Sign up free
           </Link>
         </div>
       </nav>
@@ -81,12 +85,18 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="py-6">
+              <div className="py-6 space-y-2">
                 <Link
                   href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
+                </Link>
+                <Link
+                  href="/signup"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 bg-indigo-50 text-indigo-700 hover:bg-indigo-100"
+                >
+                  Sign up free
                 </Link>
               </div>
             </div>
