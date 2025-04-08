@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import RiskRewardSimulator from './RiskRewardSimulator';
 import AnalyticsDashboard from '../analytics/AnalyticsDashboard';
@@ -8,6 +8,12 @@ import { AuthContext } from '../ClientLayout';
 
 export default function SimulatorClient() {
   const { isLoggedIn } = React.useContext(AuthContext);
+  
+  // Add debug logging
+  useEffect(() => {
+    console.log('SimulatorClient mounted - updated version');
+    console.log('User login status:', isLoggedIn);
+  }, [isLoggedIn]);
 
   return (
     <>
