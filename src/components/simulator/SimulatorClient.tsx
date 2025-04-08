@@ -47,15 +47,23 @@ export default function SimulatorClient() {
             // --- Logged In View --- 
             <div>
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center mb-10">Your Personalized Dashboard</h2>
-              {/* 
-                Here you would fetch real user data and pass it to AnalyticsDashboard.
-                For now, using placeholder data.
-              */}
+              {/* First display the analytics dashboard */}
               <AnalyticsDashboard 
                 gameHistory={[{ type: 'Spin', amount: 10, result: 'win', balanceChange: 20, multiplier: 2 }]} 
                 currentBalance={1010} 
                 initialBalance={1000} 
               />
+              
+              {/* Then display the Risk Simulator below the dashboard */}
+              <div className="mt-16">
+                <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl text-center mb-8">Risk-Reward Simulator</h2>
+                <p className="mt-6 mb-10 text-center text-lg leading-8 text-gray-600">
+                  Continue testing different strategies with our simulator. All your activities will be tracked in your dashboard.
+                </p>
+                <div className="bg-white p-8 shadow-sm ring-1 ring-gray-900/5 rounded-xl sm:p-10">
+                  <RiskRewardSimulator initialBalance={1000} targetBalance={5000} />
+                </div>
+              </div>
             </div>
           ) : (
             // --- Logged Out View --- 

@@ -7,7 +7,7 @@ const SimulatorClient = dynamic(() => import('../../components/simulator/Simulat
 });
 
 // This is a server component that dynamically imports the client component
-// Updated for Vercel deployment - triggering a new build
+// Updated for Vercel deployment - triggering a new build for missing Risk Simulator fix
 export default function SimulatorPage() {
   return <SimulatorClient />;
 } 
