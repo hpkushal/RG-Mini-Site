@@ -216,7 +216,13 @@ const detectPatterns = (session: GameSession): Array<{
   severity: 'low' | 'medium' | 'high';
   recommendation: string;
 }> => {
-  const patterns = [];
+  const patterns: Array<{
+    id: string;
+    title: string;
+    description: string;
+    severity: 'low' | 'medium' | 'high';
+    recommendation: string;
+  }> = [];
   const events = session.events;
   
   if (events.length < 2) return patterns;
