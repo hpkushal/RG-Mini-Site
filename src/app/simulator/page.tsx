@@ -6,7 +6,8 @@ const SimulatorClient = dynamic(() => import('../../components/simulator/Simulat
   ssr: false,
 });
 
-// Next.js App Router page component must be a Server Component with no props
+// This is a server component that dynamically imports the client component
+// Updated for Vercel deployment - triggering a new build
 export default function SimulatorPage() {
   return <SimulatorClient />;
 } 
