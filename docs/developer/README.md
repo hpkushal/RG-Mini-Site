@@ -28,10 +28,18 @@ src/
 ├── components/            # Reusable components
 │   ├── common/           # Shared components
 │   ├── layout/           # Layout components
-│   └── simulator/        # Simulator-specific components
+│   ├── simulator/        # Simulator-specific components
+│   └── analytics/        # Analytics components
+│       ├── AnalyticsDashboard.tsx       # Basic analytics dashboard
+│       ├── RealTimeAnalyticsDashboard.tsx # Enhanced real-time analytics
+│       └── [Other analytics components]
 ├── lib/                   # Utility functions and helpers
 ├── hooks/                # Custom React hooks
 ├── types/                # TypeScript type definitions
+├── utils/                # Utility functions
+│   ├── auth.ts           # Authentication utilities
+│   ├── analyticsUtils.ts # Analytics processing utilities
+│   └── [Other utility files]
 └── styles/               # Global styles and Tailwind config
 ```
 
@@ -133,6 +141,93 @@ export const SimulatorProvider: React.FC = ({ children }) => {
   );
 };
 ```
+
+## Real-Time Analytics
+
+The application includes enhanced real-time analytics capabilities to provide users with comprehensive insights into their gambling behavior.
+
+### Analytics Utilities
+
+```typescript
+// utils/analyticsUtils.ts
+export type GameEvent = {
+  timestamp: number;
+  gameType: string;
+  betAmount: number;
+  result: 'win' | 'loss';
+  payout: number;
+  balanceChange: number;
+  multiplier: number;
+  bankrollPercentage: number;
+  responseTime?: number;
+};
+
+export type AnalyticsSnapshot = {
+  // Financial metrics
+  netProfit: number;
+  roi: number;
+  winRate: number;
+  // ...other metrics
+  
+  // Overall assessment
+  responsibleGamblingScore: number;
+  riskLevel: 'Low' | 'Medium' | 'High' | 'Very High';
+  
+  // Detected patterns
+  detectedPatterns: Array<{
+    id: string;
+    title: string;
+    description: string;
+    severity: 'low' | 'medium' | 'high';
+    recommendation: string;
+  }>;
+};
+
+// Hook for real-time analytics
+export const useRealTimeAnalytics = (
+  gameHistory: Array<GameEvent>,
+  currentBalance: number,
+  initialBalance: number
+): AnalyticsSnapshot => {
+  // Implementation details
+};
+```
+
+### Data Conversion
+
+When integrating with existing components, game history data often needs conversion:
+
+```typescript
+// Example from RiskRewardSimulator.tsx
+const convertGameHistory = (history: Array<{ 
+  type: string; 
+  amount: number; 
+  result: string; 
+  balanceChange: number;
+  multiplier: number;
+}>): Array<GameEvent> => {
+  return history.map((bet, index) => {
+    const timestamp = Date.now() - (history.length - index) * 60000;
+    return {
+      timestamp,
+      gameType: bet.type,
+      betAmount: bet.amount,
+      result: bet.result as 'win' | 'loss',
+      // ...other properties
+    };
+  });
+};
+```
+
+### Analytics Components
+
+The real-time analytics dashboard is composed of several sub-components:
+
+- `RiskLevel`: Visual indicator for different risk levels
+- `Metric`: Displays various metrics with trend indicators
+- `PatternCard`: Shows detected patterns with severity and recommendations
+
+These components work together to provide a comprehensive view of gambling behavior that updates in real-time as users interact with the simulator.
 
 ## API Integration
 

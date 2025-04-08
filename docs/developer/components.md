@@ -122,6 +122,66 @@ type SimulatorProps = {
 - `renderRiskChart()`: Shows risk score fluctuations
 - `renderWinRateChart()`: Visualizes win rate by session
 
+### AnalyticsDashboard
+
+**File Path**: `src/components/analytics/AnalyticsDashboard.tsx`
+
+**Description**: The initial analytics dashboard component that provides basic metrics and visualizations for user gambling behavior.
+
+**Props**:
+```typescript
+type AnalyticsDashboardProps = {
+  gameHistory: Array<{ 
+    type: string; 
+    amount: number; 
+    result: string; 
+    balanceChange: number;
+    multiplier: number;
+  }>;
+  currentBalance: number;
+  initialBalance: number;
+};
+```
+
+**Key Features**:
+- Tab-based navigation between different analytics sections
+- Comparative analytics showing user's behavior against benchmarks
+- Financial metrics display (win rate, profit/loss, ROI)
+- Basic pattern recognition
+
+### RealTimeAnalyticsDashboard
+
+**File Path**: `src/components/analytics/RealTimeAnalyticsDashboard.tsx`
+
+**Description**: An enhanced analytics dashboard with real-time metrics and advanced visualizations. This component provides comprehensive insights into gambling behavior with more sophisticated pattern detection and risk assessment.
+
+**Props**:
+```typescript
+type RealTimeAnalyticsDashboardProps = {
+  gameHistory: Array<GameEvent>;
+  currentBalance: number;
+  initialBalance: number;
+};
+```
+
+**Sub-Components**:
+- `RiskLevel`: Visual indicator for risk levels with appropriate styling based on severity
+- `Metric`: Displays various metrics with trend indicators and tooltips
+- `PatternCard`: Shows detected patterns in gambling behavior with severity indicators and recommendations
+
+**Key Features**:
+- Enhanced real-time analytics with comprehensive metrics
+- Risk level indicators with visual cues (color-coding)
+- Trend analysis with directional indicators
+- Behavioral pattern detection with severity assessment
+- Actionable recommendations based on detected patterns
+- Tab-based organization for overview, behavioral analysis, and financial metrics
+
+**Implementation Notes**:
+- Requires `GameEvent` type from `analyticsUtils.ts` for proper data formatting
+- Integrates with the `useRealTimeAnalytics` hook for data processing
+- Used exclusively by logged-in users in the Risk Simulator
+
 ---
 
 ## Education Components

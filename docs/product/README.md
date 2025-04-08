@@ -30,6 +30,22 @@ The Risk-Reward Simulator is an educational platform designed to help users unde
 - Session duration
 - Behavior analysis
 
+#### Basic Analytics (Free Users)
+- Win/loss tracking
+- Basic risk assessment
+- Limited trend visualization
+- Simplified pattern detection
+- Session-level stats
+
+#### Real-Time Analytics (Authenticated Users)
+- Comprehensive risk assessment with color-coded indicators
+- Advanced pattern recognition with severity classification
+- Actionable recommendations based on detected behavior
+- Trend analysis with directional indicators
+- Financial metrics with contextual evaluation
+- Behavioral insights with predictive elements
+- Personalized responsible gambling scoring
+
 #### Visualization
 - Interactive charts
 - Pattern recognition

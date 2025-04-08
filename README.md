@@ -1,4 +1,4 @@
-# Responsible Gambling Website
+bit# Responsible Gambling Website
 
 An educational platform designed to help users understand and develop healthier gambling habits through risk-free simulation, education, and support resources.
 
@@ -17,6 +17,11 @@ This website aims to help users:
 - **Educational Resources**: Materials about cognitive biases, financial management, and warning signs
 - **Self-Assessment Tools**: Quick questionnaires to evaluate gambling habits
 - **Success Stories**: Real experiences from users who developed healthier gambling habits
+- **Real-Time Analytics Dashboard**: Comprehensive analytics that provide detailed insights into gambling behavior with personalized recommendations (for logged-in users)
+  - Pattern detection with severity classification
+  - Risk level indicators with visual cues
+  - Trend analysis with directional indicators
+  - Behavioral insights with actionable recommendations
 
 ## Project Structure
 

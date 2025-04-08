@@ -1,6 +1,5 @@
 'use client';
 
-import ClientLayout from '../components/ClientLayout';
 import HeroSection from '../components/sections/HeroSection';
 import SimulatorFeaturesSection from '../components/sections/SimulatorFeaturesSection';
 import DashboardFeaturesSection from '../components/sections/DashboardFeaturesSection';
@@ -17,7 +16,7 @@ import AnimationStyles from '../components/ui/AnimationStyles';
  */
 export default function Home() {
   return (
-    <ClientLayout>
+    <>
       <div className="bg-white">
         <HeroSection />
         <SimulatorFeaturesSection />
@@ -28,6 +27,6 @@ export default function Home() {
 
       <FloatingHelpButton href="/support/chat" />
       <AnimationStyles />
-    </ClientLayout>
+    </>
   );
 } 
